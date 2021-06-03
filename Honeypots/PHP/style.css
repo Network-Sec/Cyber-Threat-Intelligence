@@ -1,0 +1,67 @@
+body.login .content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+body.login .content h3 {
+    font-size: 1rem;
+    margin: 30px;
+}
+
+body.login .content > form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    background-color: #0079D6;
+    padding: 50px;
+    box-shadow: 20px 20px 20px rgba(0,0,0,0.3);
+    border-radius: 15px;
+}
+
+body.login .content > form > img {
+    max-height: 80px;
+}
+
+body.login input {
+    border: 1px solid #848484;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	outline:0;
+	padding: 20px 50px;
+    margin: 20px;
+    font-size: 1rem;
+}
+
+body.login input[type=submit] {
+    cursor: pointer;
+    cursor: hand;
+}
+
+body.login input[type=submit]:hover {
+    background-color: #a4c7ff
+}
+
+body.login .error {
+    background-color: #c10030;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInOut 4s;
+    padding: 0 30px;
+    height: 0px; 
+    opacity: 0;
+}
+
+@keyframes fadeInOut {
+    0% { height: 0px; opacity: 0; }
+    30% { height: 45px; opacity: 1; }
+    60% { height: 45px; opacity: 1; }
+    100% { height: 0px; opacity: 0; }
+}
