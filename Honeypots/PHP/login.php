@@ -1,7 +1,7 @@
 <?php 
     if ((isset($_REQUEST['Username'])) && (isset($_REQUEST['Password']))) {
         // Create a Database named honeypot, one table with 5 columns: 
-        // id (INT Autoincrement, username VARCHAR(256), password VARCHAR(256), ip VARCHAR(256), date current_date=
+        // id INT Autoincrement Primary, username VARCHAR(256), password VARCHAR(256), ip VARCHAR(256), date current_date
         // Insert your DB credentials
         $dbname = "honeypot";
         $username = "dbuser";
