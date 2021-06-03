@@ -3,18 +3,18 @@
         // Create a Database named honeypot, one table called loginattempts with 5 columns: 
         // id INT Autoincrement Primary, username VARCHAR(256), password VARCHAR(256), ip VARCHAR(256), date current_date
         // Insert your DB credentials
-        $dbname = "honeypot";
-        $username = "dbuser";
-        $password = "...";  
-        $hostname = "localhost:3306";
+        $dbname = 'honeypot';
+        $username = 'dbuser';
+        $password = '...';  
+        $hostname = 'localhost:3306';
 
         $dsn = "mysql:host=$hostname;dbname=$dbname;charset=UTF8";
         $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
         $pdo = new PDO($dsn, $username, $password, $options);
 
-        $honeypotUsername = $_REQUEST['Username'] ? $_REQUEST['Username'] : "empty";
-        $honeypotPassword = $_REQUEST['Password'] ? $_REQUEST['Password'] : "empty";
-        $honeypotIP = $_SERVER['REMOTE_ADDR'] ? $_SERVER['REMOTE_ADDR'] : "empty";
+        $honeypotUsername = $_REQUEST['Username'] ? $_REQUEST['Username'] : 'empty';
+        $honeypotPassword = $_REQUEST['Password'] ? $_REQUEST['Password'] : 'empty';
+        $honeypotIP = $_SERVER['REMOTE_ADDR'] ? $_SERVER['REMOTE_ADDR'] : 'empty';
 
         $sql = 'insert into loginattempts(username, password, ip) values(:username,:password,:ip)';
         $statement = $pdo->prepare($sql);
