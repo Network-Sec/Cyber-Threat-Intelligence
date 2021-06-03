@@ -1,6 +1,6 @@
 <?php 
     if ((isset($_REQUEST['Username'])) && (isset($_REQUEST['Password']))) {
-        // Create a Database named honeypot, one table with 5 columns: 
+        // Create a Database named honeypot, one table called loginattempts with 5 columns: 
         // id INT Autoincrement Primary, username VARCHAR(256), password VARCHAR(256), ip VARCHAR(256), date current_date
         // Insert your DB credentials
         $dbname = "honeypot";
@@ -16,7 +16,7 @@
         $honeypotPassword = $_REQUEST['Password'] ? $_REQUEST['Password'] : "empty";
         $honeypotIP = $_SERVER['REMOTE_ADDR'] ? $_SERVER['REMOTE_ADDR'] : "empty";
 
-        $sql = 'insert into nws_login(username, password, ip) values(:username,:password,:ip)';
+        $sql = 'insert into loginattempts(username, password, ip) values(:username,:password,:ip)';
         $statement = $pdo->prepare($sql);
         $statement->bindValue(':username', $honeypotUsername);
         $statement->bindValue(':password', $honeypotPassword);
