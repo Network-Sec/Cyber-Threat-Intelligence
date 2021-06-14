@@ -7,7 +7,7 @@ a=0
 
 while true
 do
-        filename="tpdne$a-$(date '+%Y-%m-%d_%H-%M-%S').jpg"
+        filename="$a-tpdne-$(date '+%Y-%m-%d_%H-%M-%S').jpg"
         wget https://thispersondoesnotexist.com/image -O "$filename" -q
         echo "[+] Image saved to $filename"
         
